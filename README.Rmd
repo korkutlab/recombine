@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+options(tibble.print_min = 5, tibble.print_max = 5)
+```
+
+# RECOMBINE
+
+## Overview
+
+RECOMBINE (REcurrent COmposite Markers for Biological Identities with Neighborhood Enrichment) is a computational framework for unbiased selection of discriminant markers that hierarchically distinguish cells and extraction of recurrent composite markers (RCMs) that characterize cell types and states with high granularity.
+
+RECOMBINE consists of two steps. The first step employs sparse hierarchical clustering with spike-and-slab lasso (SHC-SSL) to select features that discriminate hierarchical cell subpopulations from high dimensional data such as scRNA-seq. The second step employs neighborhood recurrence test to extract RCMs at the cell and subpopulation levels.
+
+## Installation
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("korkutlab/recombine")
+```
+
+## Tutorials
+
+Tutorial 1: RECOBMINE selects unbiased marker panel from scRNA-seq data for targeted spatial transcriptomics (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/mvc_scRNA_spatial/mvc_scRNA_spatial.md)
+
+Tutorial 2: RECOMBINE identifies recurrent composite markers for common and rare cell subpopulations of mouse intestinal organoids (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/intestine_scRNA/intestine_scRNA.md)
+
+Tutorial 3: RECOMBINE SHC-SSL performs accurate feature selection coupled with hierarchical clustering (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/sim/sim.md)
+
+<!-- ## Citation -->
+<!-- Li X. and Korkut A. (2023) Recurrent composite markers of cell types and states.  -->

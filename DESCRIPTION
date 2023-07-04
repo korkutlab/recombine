@@ -1,0 +1,28 @@
+Package: recombine
+Title: RECOMBINE: Recurrent Composite Markers for Biological Identities with Neighborhood Enrichment
+Version: 1.0
+Authors@R: 
+    c(person("Xubin", 
+             "Li",
+             role = c("aut", "cre"),
+             email = "xli27@mdanderson.org"),
+      person("Anil", 
+             "Korkut",
+             role = c("aut", "cph"),
+             email = "akorkut@mdanderson.org"))
+Description: RECOMBINE (REcurrent COmposite Markers for Biological Identities with Neighborhood Enrichment) is a computational framework for unbiased selection of discriminant markers that hierarchically distinguish cells and extraction of recurrent composite markers (RCMs) that characterize cell types and states with high granularity.
+License: Apache License, Version 2.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+LinkingTo: 
+    Rcpp
+Imports: 
+    dplyr,
+    tidyr,
+    Rcpp
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
