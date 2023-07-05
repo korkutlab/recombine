@@ -31,9 +31,9 @@ devtools::install_github("korkutlab/recombine")
 
 ## Tutorials
 
-Tutorial 1: RECOBMINE selects unbiased marker panel from scRNA-seq data for targeted spatial transcriptomics (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/mvc_scRNA_spatial/mvc_scRNA_spatial.md)
+Tutorial 1: RECOMBINE identifies recurrent composite markers for common and rare cell subpopulations of mouse intestinal organoids (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/intestine_scRNA/intestine_scRNA.md)
 
-Tutorial 2: RECOMBINE identifies recurrent composite markers for common and rare cell subpopulations of mouse intestinal organoids (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/intestine_scRNA/intestine_scRNA.md)
+Tutorial 2: RECOBMINE selects unbiased marker panel from scRNA-seq data for targeted spatial transcriptomics (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/mvc_scRNA_spatial/mvc_scRNA_spatial.md)
 
 Tutorial 3: RECOMBINE SHC-SSL performs accurate feature selection coupled with hierarchical clustering (https://github.com/korkutlab/recombine/blob/main/inst/tutorials/sim/sim.md)
 
