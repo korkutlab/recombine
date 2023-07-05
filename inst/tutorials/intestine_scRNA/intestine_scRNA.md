@@ -625,11 +625,11 @@ draw(ht, newpage = FALSE)
 
 ![](intestine_scRNA_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
-As we can see in the heatmap, Reg4 is also expressed subsets of cells in
-cluster 1 and 2. Therefore, to fully characterize Reg4+ enteroendocrine
-cells and discriminate from other subpopulations, in addition to Reg4,
-other characteristic markers, particularly Tff3 and Tac2, should be
-included as detected by RECOMBINE.
+As we can see in the heatmap, Reg4 is also expressed in subsets of cells
+in cluster 1 and 2. Therefore, to fully characterize Reg4+
+enteroendocrine cells and discriminate them from other subpopulations,
+in addition to Reg4, other characteristic markers, particularly Tff3 or
+Tac1, should be included as detected by RECOMBINE.
 
 ## Session information
 
