@@ -157,7 +157,7 @@ nhood_recur_test <- function(
 #' Given the recurrent composite markers (RCMs) per cell and the membership of cell subpopulations, get_rcm_subpop calculates the average neighborhood Z score and fraction of significant cells for each marker for each cell subpopulation.
 #'
 #' @return
-#' \item{data frame of RCMs per cell subpopulation}{including columns: subpop, marker, fract_signif_cells, avg_nhood_zscore.}
+#' \item{data frame of RCMs per cell subpopulation}{including columns: subpop, marker, fract_signif_cells, avg_nhood_zscore, PR_AUC, ROC_AUC.}
 #' 
 #' @examples
 #' df_rcm_subpop <- get_rcm_subpop(intestine_data$df_rcm_cell, intestine_data$df_cell_subpop)
@@ -216,9 +216,38 @@ get_rcm_subpop <- function(
     dplyr::summarise(avg_nhood_zscore = mean(nhood_zscore)) %>%
     dplyr::ungroup()
   
+  # AUC
+  df_auc <- dplyr::tibble()
+  markers <- df_data$marker %>% unique()
+  for (m in markers) {
+    df <- df_data %>%
+      dplyr::filter(marker == m)
+    z_scores <- df$nhood_zscore
+    
+    subpops <- df$subpop %>% unique()
+    pr_aucs <- c()
+    roc_aucs <- c()
+    for (s in subpops) {
+      class_labels <- ifelse(df$subpop == s, 1, -1)
+      mm <- precrec::evalmod(scores = z_scores, labels = class_labels)
+      aucs <- precrec::auc(mm) %>% 
+        dplyr::select(curvetypes, aucs) %>% 
+        tibble::deframe()
+      pr_aucs <- c(pr_aucs, aucs["PRC"])
+      roc_aucs <- c(roc_aucs, aucs["ROC"])
+    }
+    
+    df_auc <- df_auc %>%
+      dplyr::bind_rows(dplyr::tibble(subpop = subpops,
+                                     marker = m,
+                                     PR_AUC = pr_aucs,
+                                     ROC_AUC = roc_aucs))
+  }
+  
   # merge
   df <- df_fract %>% 
     dplyr::left_join(df_zscore, by = c("subpop", "marker")) %>%
+    dplyr::left_join(df_auc, by = c("subpop", "marker")) %>%
     dplyr::arrange(subpop, 
                    dplyr::desc(fract_signif_cells*sign(avg_nhood_zscore)),
                    dplyr::desc(avg_nhood_zscore)) 

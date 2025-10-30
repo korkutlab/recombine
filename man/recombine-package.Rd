@@ -2,6 +2,7 @@
 % Please edit documentation in R/recombine-package.R
 \docType{package}
 \name{recombine-package}
+\alias{recombine}
 \alias{recombine-package}
 \title{recombine package}
 \description{
@@ -12,5 +13,14 @@ This package includes five novel algorithms for feature selection coupled with c
 }
 \references{
 Li X. and Korkut A. (2023) Recurrent composite markers for cell subpopulations with high granularity.
+}
+\author{
+\strong{Maintainer}: Xubin Li \email{xli27@mdanderson.org}
+
+Authors:
+\itemize{
+  \item Anil Korkut \email{akorkut@mdanderson.org} [copyright holder]
+}
+
 }
 \keyword{package}

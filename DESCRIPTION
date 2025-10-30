@@ -21,6 +21,11 @@ LinkingTo:
 Imports: 
     dplyr,
     tidyr,
+    tibble,
+    stringr,
+    precrec,
+    Seurat,
+    harmony,
     Rcpp
 Suggests: 
     rmarkdown,

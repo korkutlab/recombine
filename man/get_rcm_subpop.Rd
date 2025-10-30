@@ -21,7 +21,7 @@ get_rcm_subpop(
 \item{nhood_recur_fdr_threshod}{threshold for the statistical significance of neighborhood recurrence FDRs. The default is 0.05.}
 }
 \value{
-\item{data frame of RCMs per cell subpopulation}{including columns: subpop, marker, fract_signif_cells, avg_nhood_zscore.}
+\item{data frame of RCMs per cell subpopulation}{including columns: subpop, marker, fract_signif_cells, avg_nhood_zscore, PR_AUC, ROC_AUC.}
 }
 \description{
 Recurrent composite markers for cell subpopulations
